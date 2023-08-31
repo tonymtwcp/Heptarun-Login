@@ -13,8 +13,7 @@ const formStyles = {
   },
 };
 
-const doFirst = () => {
-  const loginPage = document.querySelector("#login-page");
+const initialize = () => {
   const imageElement = document.querySelector("#bg-img");
   const formBox = document.querySelector("#form-box");
   const inputBox = document.querySelector("#input-box");
@@ -23,6 +22,7 @@ const doFirst = () => {
   const passwordInput = document.querySelector("#password");
   const loginBtn = document.querySelector("#login-btn");
   const errorMessage = document.querySelector("#error-message");
+  let errorMessageTimeout;
 
   const setFormStyle = (imageSrc, imageRatio) => {
     const formStyle = formStyles[imageSrc];
@@ -51,12 +51,6 @@ const doFirst = () => {
     const screenHeight = window.innerHeight;
     const screenRatio = screenWidth / screenHeight;
 
-    if (screenRatio > 3) {
-      loginPage.style.overflow = `auto`;
-    } else {
-      loginPage.style.overflow = `hidden`;
-    }
-
     const imageSrc =
       screenRatio > 1.9 || screenRatio < 1
         ? "./images/Heptarun-169.jpg"
@@ -83,8 +77,6 @@ const doFirst = () => {
   };
 
   const showError = (message) => {
-    let errorMessageTimeout;
-
     if (!errorMessage) {
       console.error("Error message element not found.");
       return;
@@ -111,25 +103,23 @@ const doFirst = () => {
       return;
     }
 
-    const apiUrl = "LOGIN_API_URL";
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ account, password }),
-    };
-
     try {
-      const response = await fetch(apiUrl, requestOptions);
-      const data = await response.json();
+      const res = await fetch("LOGIN_API_URL", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ account, password }),
+      });
+      const data = await res.json();
 
       if (data.error) {
         showError(data.error);
         passwordInput.value = "";
       }
-    } catch (error) {
-      console.error(error);
+    } catch (e) {
+      console.error(e);
       showError("An error occurred, please try again later.");
       passwordInput.value = "";
     }
@@ -146,4 +136,4 @@ const doFirst = () => {
   window.addEventListener("orientationchange", handleResize);
 };
 
-window.addEventListener("load", doFirst);
+window.addEventListener("load", initialize);
