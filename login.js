@@ -1,14 +1,14 @@
 const formStyles = {
   "./images/Heptarun-169.jpg": {
     formBoxStyle: { width: 18.8, height: 34 },
-
-    inputFieldStyle: { width: 153, height: 30 },
+    inputBoxStyle: { height: 76 },
+    inputFieldStyle: { width: 150, height: 30 },
     loginBtnStyle: { width: 90, height: 55, marginLeft: 15 },
   },
   "./images/Heptarun-43.jpg": {
     formBoxStyle: { width: 14.8, height: 33.9 },
-
-    inputFieldStyle: { width: 110, height: 30 },
+    inputBoxStyle: { height: 75 },
+    inputFieldStyle: { width: 108, height: 30 },
     loginBtnStyle: { width: 68, height: 53, marginLeft: 10 },
   },
 };
@@ -16,6 +16,7 @@ const formStyles = {
 const doFirst = () => {
   const imageElement = document.querySelector("#bg-img");
   const formBox = document.querySelector("#form-box");
+  const inputBox = document.querySelector("#input-box");
   const inputFields = document.querySelectorAll(".input-field");
   const accountInput = document.querySelector("#account");
   const passwordInput = document.querySelector("#password");
@@ -25,12 +26,13 @@ const doFirst = () => {
   const setFormStyle = (imageSrc, imageRatio) => {
     const formStyle = formStyles[imageSrc];
     if (formStyle) {
-      const { formBoxStyle, inputFieldStyle, loginBtnStyle } =
+      const { formBoxStyle, inputBoxStyle, inputFieldStyle, loginBtnStyle } =
         formStyle;
 
       formBox.style.transform = `scale(${imageRatio})`;
       formBox.style.width = `${formBoxStyle.width}rem`;
       formBox.style.height = `${formBoxStyle.height}rem`;
+      inputBox.style.height = `${inputBoxStyle.height}px`;
 
       inputFields.forEach((inputField) => {
         inputField.style.width = `${inputFieldStyle.width}px`;
