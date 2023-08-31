@@ -1,25 +1,25 @@
 const formStyles = {
   "./images/Heptarun-169.jpg": {
-    formBoxStyle: { width: 18.8, height: 34 },
-    inputBoxStyle: { height: 76 },
+    LoginformStyle: { width: 18.8, height: 34 },
+    inputContainerStyle: { height: 76 },
     inputFieldStyle: { width: 150, height: 30 },
     loginBtnStyle: { width: 90, height: 55, marginLeft: 15 },
   },
   "./images/Heptarun-43.jpg": {
-    formBoxStyle: { width: 14.8, height: 33.9 },
-    inputBoxStyle: { height: 75 },
+    LoginformStyle: { width: 14.8, height: 33.9 },
+    inputContainerStyle: { height: 75 },
     inputFieldStyle: { width: 108, height: 30 },
     loginBtnStyle: { width: 68, height: 53, marginLeft: 10 },
   },
 };
 
 const initialize = () => {
-  const imageElement = document.querySelector("#bg-img");
-  const formBox = document.querySelector("#login-form");
-  const inputBox = document.querySelector("#input-container");
+  const bgImage = document.querySelector("#bg-img");
+  const Loginform = document.querySelector("#login-form");
+  const inputContainer = document.querySelector("#input-container");
   const inputFields = document.querySelectorAll(".input-field");
-  const accountInput = document.querySelector("#account");
-  const passwordInput = document.querySelector("#password");
+  const accountInput = document.querySelector("#account-input");
+  const passwordInput = document.querySelector("#password-input");
   const loginBtn = document.querySelector("#login-btn");
   const errorMessage = document.querySelector("#error-message");
   let errorMessageTimeout;
@@ -27,13 +27,13 @@ const initialize = () => {
   const setFormStyle = (imageSrc, imageRatio) => {
     const formStyle = formStyles[imageSrc];
     if (formStyle) {
-      const { formBoxStyle, inputBoxStyle, inputFieldStyle, loginBtnStyle } =
+      const { LoginformStyle, inputContainerStyle, inputFieldStyle, loginBtnStyle } =
         formStyle;
 
-      formBox.style.transform = `scale(${imageRatio})`;
-      formBox.style.width = `${formBoxStyle.width}rem`;
-      formBox.style.height = `${formBoxStyle.height}rem`;
-      inputBox.style.height = `${inputBoxStyle.height}px`;
+      Loginform.style.transform = `scale(${imageRatio})`;
+      Loginform.style.width = `${LoginformStyle.width}rem`;
+      Loginform.style.height = `${LoginformStyle.height}rem`;
+      inputContainer.style.height = `${inputContainerStyle.height}px`;
 
       inputFields.forEach((inputField) => {
         inputField.style.width = `${inputFieldStyle.width}px`;
@@ -55,12 +55,12 @@ const initialize = () => {
       screenRatio > 1.9 || screenRatio < 1
         ? "./images/Heptarun-169.jpg"
         : "./images/Heptarun-43.jpg";
-    imageElement.src = imageSrc;
+    bgImage.src = imageSrc;
 
-    imageElement.onload = () => {
+    bgImage.onload = () => {
       const scrollHeight = document.documentElement.scrollHeight;
-      const imageWidth = imageElement.naturalWidth;
-      const imageHeight = imageElement.naturalHeight;
+      const imageWidth = bgImage.naturalWidth;
+      const imageHeight = bgImage.naturalHeight;
 
       const shouldUseMin = scrollHeight > screenHeight;
       const imageRatio = shouldUseMin
@@ -127,7 +127,7 @@ const initialize = () => {
 
   loginBtn.addEventListener("click", handleLogin);
 
-  formBox.addEventListener("submit", (e) => {
+  Loginform.addEventListener("submit", (e) => {
     e.preventDefault();
   });
 
