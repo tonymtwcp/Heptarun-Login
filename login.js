@@ -15,8 +15,8 @@ const formStyles = {
 
 const initialize = () => {
   const imageElement = document.querySelector("#bg-img");
-  const formBox = document.querySelector("#form-box");
-  const inputBox = document.querySelector("#input-box");
+  const formBox = document.querySelector("#login-form");
+  const inputBox = document.querySelector("#input-container");
   const inputFields = document.querySelectorAll(".input-field");
   const accountInput = document.querySelector("#account");
   const passwordInput = document.querySelector("#password");
