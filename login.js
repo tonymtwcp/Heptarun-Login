@@ -27,12 +27,18 @@ const initialize = () => {
   const setFormStyle = (imageSrc, imageRatio) => {
     const formStyle = formStyles[imageSrc];
     if (formStyle) {
-      const { LoginformStyle, inputContainerStyle, inputFieldStyle, loginBtnStyle } =
-        formStyle;
+      const {
+        LoginformStyle,
+        inputContainerStyle,
+        inputFieldStyle,
+        loginBtnStyle,
+      } = formStyle;
 
       Loginform.style.transform = `scale(${imageRatio})`;
+
       Loginform.style.width = `${LoginformStyle.width}rem`;
       Loginform.style.height = `${LoginformStyle.height}rem`;
+
       inputContainer.style.height = `${inputContainerStyle.height}px`;
 
       inputFields.forEach((inputField) => {
