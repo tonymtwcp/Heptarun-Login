@@ -14,6 +14,7 @@ const formStyles = {
 };
 
 const doFirst = () => {
+  const loginPage = document.querySelector("#login-page");
   const imageElement = document.querySelector("#bg-img");
   const formBox = document.querySelector("#form-box");
   const inputBox = document.querySelector("#input-box");
@@ -49,6 +50,12 @@ const doFirst = () => {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
     const screenRatio = screenWidth / screenHeight;
+
+    if (screenRatio > 3) {
+      loginPage.style.overflow = `auto`;
+    } else {
+      loginPage.style.overflow = `hidden`;
+    }
 
     const imageSrc =
       screenRatio > 1.9 || screenRatio < 1
