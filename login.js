@@ -1,15 +1,15 @@
 const formStyles = {
   "./images/Heptarun-169.jpg": {
-    LoginformStyle: { width: 18.8, height: 34 },
-    inputContainerStyle: { height: 76 },
-    inputFieldStyle: { width: 150, height: 30 },
-    loginBtnStyle: { width: 90, height: 55, marginLeft: 15 },
+    LoginformStyle: { width: 43.3, height: 6 },
+    inputContainerStyle: { width: 486, height: 95 },
+    inputFieldStyle: { width: 154, height: 30 },
+    loginBtnStyle: { width: 108, height: 55, marginLeft: 38 },
   },
   "./images/Heptarun-43.jpg": {
-    LoginformStyle: { width: 14.8, height: 33.9 },
-    inputContainerStyle: { height: 75 },
-    inputFieldStyle: { width: 108, height: 30 },
-    loginBtnStyle: { width: 68, height: 53, marginLeft: 10 },
+    LoginformStyle: { width: 32.4, height: 6 },
+    inputContainerStyle: { width: 360, height: 94 },
+    inputFieldStyle: { width: 110, height: 30 },
+    loginBtnStyle: { width: 80, height: 53, marginLeft: 30 },
   },
 };
 
@@ -40,6 +40,7 @@ const initialize = () => {
       Loginform.style.height = `${LoginformStyle.height}rem`;
 
       inputContainer.style.height = `${inputContainerStyle.height}px`;
+      inputContainer.style.width = `${inputContainerStyle.width}px`;
 
       inputFields.forEach((inputField) => {
         inputField.style.width = `${inputFieldStyle.width}px`;
@@ -52,13 +53,20 @@ const initialize = () => {
     }
   };
 
+  if (window.innerWidth / window.innerHeight < 0.5) {
+    const confirmMsg = "Please rotate your screen to landscape mode.";
+    if (confirm(confirmMsg)) {
+      screen.orientation.lock("landscape");
+    }
+  }
+
   const handleResize = () => {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
     const screenRatio = screenWidth / screenHeight;
 
     const imageSrc =
-      screenRatio > 1.9 || screenRatio < 1
+      screenRatio > 1.9
         ? "./images/Heptarun-169.jpg"
         : "./images/Heptarun-43.jpg";
     bgImage.src = imageSrc;

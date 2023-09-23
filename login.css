@@ -15,15 +15,15 @@ body {
   height: 100vh;
   height: var(--doc-height);
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   touch-action: pan-y;
   display: flex;
-  align-items: start;
+  align-items: end;
 }
 
 .bg-img {
   object-fit: cover;
-  object-position: top right;
+  object-position: bottom right;
   min-height: 100%;
   min-width: 100%;
 }
@@ -31,9 +31,9 @@ body {
 .login-form {
   /* background: rgba(0, 0, 0, 0.5); */
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
-  transform-origin: top right;
+  transform-origin: bottom right;
 }
 
 .form-container {
@@ -45,7 +45,8 @@ body {
 
 .input-container {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  align-items: center;
   justify-content: space-between;
 }
 
