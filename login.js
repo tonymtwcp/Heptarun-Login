@@ -60,7 +60,7 @@ const initialize = () => {
     const screenRatio = screenWidth / screenHeight;
 
     const imageSrc =
-      screenRatio > 1.9
+      screenRatio > 1.9 || screenRatio < 1
         ? "./images/Heptarun-169.jpg"
         : "./images/Heptarun-43.jpg";
     bgImage.src = imageSrc;
