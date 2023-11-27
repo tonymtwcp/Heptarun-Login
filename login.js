@@ -1,15 +1,15 @@
 const formStyles = {
   "./images/Heptarun-169.jpg": {
-    LoginformStyle: { width: 43.3, height: 6 },
-    inputContainerStyle: { width: 486, height: 95 },
-    inputFieldStyle: { width: 154, height: 30 },
-    loginBtnStyle: { width: 108, height: 55, marginLeft: 38 },
+    LoginformStyle: { width: 195, height: 202 },
+    inputContainerStyle: { width: 160, height: 85 },
+    inputFieldStyle: { width: 120, height: 30 },
+    loginBtnStyle: { width: 80, height: 50, marginLeft: 96, marginTop: 42 },
   },
   "./images/Heptarun-43.jpg": {
-    LoginformStyle: { width: 32.4, height: 6 },
-    inputContainerStyle: { width: 360, height: 94 },
+    LoginformStyle: { width: 146, height: 202 },
+    inputContainerStyle: { width: 119, height: 86 },
     inputFieldStyle: { width: 110, height: 30 },
-    loginBtnStyle: { width: 80, height: 53, marginLeft: 30 },
+    loginBtnStyle: { width: 65, height: 50, marginLeft: 69, marginTop: 40 },
   },
 };
 
@@ -36,8 +36,8 @@ const initialize = () => {
 
       Loginform.style.transform = `scale(${imageRatio})`;
 
-      Loginform.style.width = `${LoginformStyle.width}rem`;
-      Loginform.style.height = `${LoginformStyle.height}rem`;
+      Loginform.style.width = `${LoginformStyle.width}px`;
+      Loginform.style.height = `${LoginformStyle.height}px`;
 
       inputContainer.style.height = `${inputContainerStyle.height}px`;
       inputContainer.style.width = `${inputContainerStyle.width}px`;
@@ -50,15 +50,9 @@ const initialize = () => {
       loginBtn.style.width = `${loginBtnStyle.width}px`;
       loginBtn.style.height = `${loginBtnStyle.height}px`;
       loginBtn.style.marginLeft = `${loginBtnStyle.marginLeft}px`;
+      loginBtn.style.marginTop = `${loginBtnStyle.marginTop}px`;
     }
   };
-
-  if (window.innerWidth / window.innerHeight < 0.5) {
-    const confirmMsg = "Please rotate your screen to landscape mode.";
-    if (confirm(confirmMsg)) {
-      screen.orientation.lock("landscape");
-    }
-  }
 
   const handleResize = () => {
     const screenWidth = window.innerWidth;

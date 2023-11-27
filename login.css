@@ -37,25 +37,23 @@ body {
 }
 
 .form-container {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
 }
 
 .input-container {
   display: flex;
-  /* flex-direction: column; */
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
 }
 
 .input-field {
+  color: #fff;
   background: transparent;
   border-radius: 0;
   text-align: center;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
   box-shadow: none;
   font-weight: 600;
 }
@@ -65,11 +63,11 @@ body {
 }
 
 .input-field:hover {
-  border-bottom: 3px solid #000;
+  border-bottom: 3px solid #fff;
 }
 
 .login-btn {
-  /* background: rgba(255, 0, 0, 0.5); */
+  background: rgba(255, 0, 0, 0.5);
   background: transparent;
   border: none;
   cursor: pointer;
