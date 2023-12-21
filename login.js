@@ -1,15 +1,15 @@
 const formStyles = {
   "./images/Heptarun-169.jpg": {
     LoginformStyle: { width: 286, height: 480 },
-    inputContainerStyle: { width: 177, height: 84 },
+    inputContainerStyle: { width: 177, height: 85 },
     inputFieldStyle: { width: 171, height: 23 },
-    loginBtnStyle: { width: 172, height: 33, marginLeft: 0, marginTop: 18 },
+    loginBtnStyle: { width: 172, height: 33, marginLeft: 0, marginTop: 17 },
   },
   "./images/Heptarun-43.jpg": {
     LoginformStyle: { width: 214, height: 480 },
     inputContainerStyle: { width: 132, height: 85 },
     inputFieldStyle: { width: 128, height: 23 },
-    loginBtnStyle: { width: 128, height: 33, marginLeft: 0, marginTop: 18 },
+    loginBtnStyle: { width: 128, height: 33, marginLeft: 0, marginTop: 17 },
   },
 };
 
