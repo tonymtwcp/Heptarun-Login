@@ -31,12 +31,12 @@
     /* overflow: hidden; */
     touch-action: pan-y;
     display: flex;
-    align-items: start;
+    align-items: end;
   }
 
   .myPic {
     object-fit: cover;
-    object-position: top right;
+    object-position: bottom right;
     min-height: 100%;
     min-width: 100%;
   }
@@ -44,15 +44,13 @@
   .myLogin {
     /* background: rgba(0, 0, 0, 0.5); */
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
-    transform-origin: top right;
+    transform-origin: bottom right;
   }
 
   .form-container {
     display: flex;
-    position: absolute;
-    bottom: 0;
   }
 
   .input-container {
@@ -66,7 +64,7 @@
     border-radius: 0;
     text-align: center;
     border: none;
-    font-size: 20px;
+    font-size: 16px;
     box-shadow: none;
     font-weight: 600;
   }
@@ -98,7 +96,7 @@
   }
 
   .password-eye i {
-    font-size: 16px;
+    font-size: 14px;
     color: #414141;
     transition: color 0.3s ease-in-out;
     width: 100%;
@@ -108,7 +106,7 @@
 
 <body>
   <form class="login-page">
-    <img id="myPic" class="myPic" src="./images/1868x934-ImgMode-2024-0601-HRT.jpg" />
+    <img id="myPic" class="myPic" src="./images/1868x934-ImgMode-2024-0701-HRT.jpg" />
 
     <div id="myLogin" class="myLogin">
       <div class="form-container">
@@ -125,23 +123,23 @@
   </form>
 
   <script>
-    const IMAGE_169 = "./images/1868x934-ImgMode-2024-0601-HRT.jpg";
-    const IMAGE_43 = "./images/1400x934-ImgMode-2024-0601-HRT.jpg";
+    const IMAGE_169 = "./images/1868x934-ImgMode-2024-0701-HRT.jpg";
+    const IMAGE_43 = "./images/1400x934-ImgMode-2024-0701-HRT.jpg";
 
     const formStyles = {
       [IMAGE_169]: {
-        myLoginStyle: { width: 315, height: 547 },
-        inputContainerStyle: { width: 160, height: 81 },
-        inputFieldStyle: { width: 142, height: 35 },
-        passwordEyeStyle: { right: 20 },
-        loginBtnStyle: { width: 84, height: 57, marginLeft: 0, marginTop: 8 },
+        myLoginStyle: { width: 365, height: 116 },
+        inputContainerStyle: { width: 160, height: 62 },
+        inputFieldStyle: { width: 160, height: 27 },
+        passwordEyeStyle: { right: 0 },
+        loginBtnStyle: { width: 118, height: 50, marginLeft: 35, marginTop: 6 },
       },
       [IMAGE_43]: {
-        myLoginStyle: { width: 236, height: 547 },
-        inputContainerStyle: { width: 120, height: 81 },
-        inputFieldStyle: { width: 106, height: 35 },
-        passwordEyeStyle: { right: 14 },
-        loginBtnStyle: { width: 63, height: 57, marginLeft: 0, marginTop: 8 },
+        myLoginStyle: { width: 274, height: 116 },
+        inputContainerStyle: { width: 120, height: 62 },
+        inputFieldStyle: { width: 119, height: 27 },
+        passwordEyeStyle: { right: 0 },
+        loginBtnStyle: { width: 90, height: 50, marginLeft: 26, marginTop: 6 },
       },
     };
 
